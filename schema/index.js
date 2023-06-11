@@ -17,8 +17,7 @@
     password:{
         type:String,
         required:[true,'please provide password'],
-        minlength:6,
-        maxlength:50,
+        
     },
  })
 
