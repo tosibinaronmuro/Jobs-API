@@ -6,13 +6,14 @@ const notFoundHandler = require("./middleware/not-found");
 const connectDB = require("./database/connect");
 const Authrouter = require("./routes/routes");
 const Jobsrouter = require("./routes/jobs-route");
+const authMiddleware = require("./middleware/auth");
 const app = express();
 
 app.use(express.json());
 
  
 app.use("/api/v1/auth", Authrouter);
-app.use("/api/v1/jobs", Jobsrouter);
+app.use("/api/v1/jobs", authMiddleware, Jobsrouter);
 
 // error handler
 app.use(errorHandler);
