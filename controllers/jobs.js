@@ -4,12 +4,20 @@ const { BadRequest, NotFound } = require("../error");
 
 
 const getAllJobs = async (req, res, next) => {
-  const jobs = await Jobs.find({ createdBy: req.user.userId }).sort(
+  const jobs = await Jobs.find({ }).sort(
     "createdAt"
   );
   res
     .status(StatusCodes.OK)
-    .json({ "total number of jobs": jobs.length, jobs });
+    .json({ "total number of jobbbs": jobs.length, jobs });
+};
+const getMyJobs = async (req, res, next) => {
+  const myjobs = await Jobs.find({ createdBy: req.user.userId }).sort(
+    "createdAt"
+  );
+  res
+    .status(StatusCodes.OK)
+    .json({ "total number of jobs": myjobs.length, myjobs });
 };
 
 
@@ -66,4 +74,4 @@ const createJob = async (req, res) => {
   }
 };
 
-module.exports = { getAllJobs, deleteAllJobs, updateJob, createJob, getJob };
+module.exports = { getAllJobs, deleteAllJobs, updateJob, createJob, getJob,getMyJobs };
