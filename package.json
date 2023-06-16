@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "Tosiron",
   "license": "ISC",
@@ -24,5 +24,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node":"14.x"
   }
+  
 }
