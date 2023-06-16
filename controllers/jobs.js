@@ -51,7 +51,7 @@ const updateJob = async (req, res) => {
     { _id: jobId, createdBy: userId },
     { company, position },
     { new: true, runValidators: true }
-  );
+  ); 
   res.status(StatusCodes.OK).json({ updateJob });
 };
 
